@@ -1,80 +1,303 @@
 {% extends "base.html" %}
 {% load static %}
 
-
 {% block hero-page %}
-<section 
-    class="relative flex items-center justify-center bg-cover bg-center"
-    style="background-image: url('{% static "image\banner-img.webp" %}');"
-    >
-    <!-- Content -->
-    <div class="relative h-40 z-10 text-center items-center pt-17">
-        <div class="text-white flex text-lg font-semibold leading-tight ">
-        <a href="/home/">HOME / </a>
-        <h2 class="pl-2">MENU PAGE</h2>
-        </div>
+<section
+    class="relative h-[320px] flex items-center justify-center bg-cover bg-center"
+    style="background-image:url('{% static 'image/banner-img.webp' %}')">
 
-       
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
+
+    <div class="relative z-10 text-center">
+        <h1 class="text-5xl font-black text-white tracking-wide">
+            OUR MENU
+        </h1>
+
+        <div class="mt-4 text-orange-300 font-semibold">
+            <a href="/home/" class="hover:text-white duration-300">
+                HOME
+            </a>
+
+            /
+
+            <span class="text-white">
+                MENU
+            </span>
+        </div>
     </div>
 
-    </section>
-
+</section>
 {% endblock %}
-
 
 {% block Menu %}
-<div class="container mx-auto">
-<section class="grid-cols-3 items-center justify-center h-screen">
- <div class="search pt-4 pb-4 flex justify-end ">
-    <form class=" pt-4 pb-4 text-orange-600 flex font-bold pr-4" method="GET">
-       {{ form.burger_type }}
-        <button class='pt-2 pb-2 rounded-lg bg-amber-700 text-white' type="submit">Filter</button>
-      </form>
+
+<section class="min-h-screen bg-gradient-to-b from-black via-[#111111] to-black py-20">
+
+<div class="container mx-auto px-6">
+  <div class="heading flex justify-between mb-16">
+
+    
+     <h2 class="text-4xl justify-left font-bold text-white pt-4 mb-16">Our Delicious Coffees</h2>
+    <!-- Search -->
+    <div class="flex justify-end mb-16">
+        <form method="GET"
+    class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-full p-3 flex gap-4 shadow-2xl items-center">
+
+    <div class="relative w-64">
+        <select name="burger_type"
+            class="appearance-none bg-white/5 text-white font-medium pl-5 pr-10 py-3 rounded-full
+                   border border-white/20 focus:outline-none focus:ring-2 focus:ring-orange-500
+                   cursor-pointer transition-all duration-200 hover:bg-white/10">
+            <option value="" class="bg-neutral-900">All Coffees</option>
+            <option value="Hot Coffee" class="bg-neutral-900">Hot Coffee</option>
+            <option value="Cold Coffee" class="bg-neutral-900">Cold Coffee</option>
+            <option value="Special Coffee" class="bg-neutral-900">Special Coffee</option>
+        </select>
+        <!-- custom dropdown arrow, since appearance-none removes the native one -->
+        <svg class="pointer-events-none absolute right-30 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
     </div>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
-  {% for product in products %}
-      <div class="bg-black rounded-2xl shadow-xl overflow-hidden
-                  hover:shadow-4xl hover:bg-gray-100 transition duration-300">
+    <button type="submit"
+        class="px-8 py-3 rounded-full bg-orange-600 hover:bg-orange-500 text-white font-bold
+               transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-600/30
+               active:scale-95">
+        Filter
+    </button>
 
-        <!-- Image -->
-        <div class="relative">
-          <img src="{{ product.image.url }}"
-               alt=""
-               class="w-full h-56 object-cover rounded-lg">
+          </form>
+    </div>
+  </div>
+    <!-- Cards -->
 
-          <span class="absolute top-4 left-4 bg-amber-700 text-white
-                       text-sm px-4 py-1 rounded-full">
-            Popular
-          </span>
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
+
+        {% for product in products %}
+
+        <div
+            class="group bg-[#171717] rounded-3xl overflow-hidden border border-[#2d2d2d]
+            hover:border-orange-500 transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_25px_60px_rgba(255,136,0,.25)]">
+
+            <!-- Image -->
+
+            <div class="relative overflow-hidden">
+
+                <img src="{{ product.image.url }}"
+                    class="h-72 w-full object-cover transition duration-700 group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent"></div>
+
+                <span
+                    class="absolute top-5 left-5 bg-orange-600 px-5 py-2 rounded-full text-white text-sm font-bold shadow-lg">
+
+                    🔥 Popular
+
+                </span>
+
+            </div>
+
+            <!-- Content -->
+
+            <div class="p-7">
+
+                <h2
+                    class="text-3xl font-extrabold text-white group-hover:text-orange-500 transition">
+
+                    {{ product.name }}
+
+                </h2>
+
+                <p class="text-gray-400 mt-4 leading-7">
+
+                    {{ product.description|truncatewords:20 }}
+
+                </p>
+
+                <div class="flex justify-between items-center mt-8">
+
+                    <span class="text-3xl font-black text-orange-500">
+
+                        ${{ product.price }}
+
+                    </span>
+
+                    <form action="{% url 'add_to_cart' product.id %}" method="post" class="ml-4">
+                        {% csrf_token %}
+                        <button type="submit" class="px-6 py-3 rounded-full bg-orange-600 text-white font-semibold hover:bg-orange-500 transition duration-300 hover:scale-105">
+                            Add to Cart
+                        </button>
+                    </form>
+
+                </div>
+
+            </div>
+
         </div>
-        <!-- Content -->
-        <div class="p-6">
-          <h3 class="text-xl font-extrabold text-[#883b04]">
-            {{ product.name }}
-          </h3>
 
-          <p class="text-[#883b04] mt-2 text-sm leading-relaxed">
-            {{ product.description|truncatewords:18 }}
-          </p>
-
-          <div class="flex items-center justify-between mt-6">
-            <span class="text-2xl font-extrabold text-[#883b04]">
-              $ {{ product.price }}
-            </span>
-            
-          </div>
-        </div>
-
-      </div>
-      {% endfor %}
+        {% endfor %}
 
     </div>
 
-    </div>
-</body>
-    </section>
 </div>
+
+</section>
+
 {% endblock %}
+{% block footer %}
+<!-- ================================= -->
+<!-- Footer -->
+<!-- ================================= -->
 
+<footer class="bg-black border-t border-white/10">
 
+<div class="max-w-7xl mx-auto px-6 py-20">
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+<!-- Logo -->
+
+<div>
+
+<img
+src="{% static 'image/koffee-logo.webp' %}"
+class="h-16 mb-6">
+
+<p class="text-gray-400 leading-8">
+
+Crafting premium coffee experiences through
+carefully selected beans, expert brewing,
+and exceptional hospitality.
+
+</p>
+
+</div>
+
+<!-- Links -->
+
+<div>
+
+<h3 class="text-white font-bold text-xl mb-6">
+
+Quick Links
+
+</h3>
+
+<ul class="space-y-4 text-gray-400">
+
+<li><a href="/home/" class="hover:text-[#C27C48]">Home</a></li>
+
+<li><a href="/about/" class="hover:text-[#C27C48]">About</a></li>
+
+<li><a href="/product/" class="hover:text-[#C27C48]">Menu</a></li>
+
+<li><a href="/contact/" class="hover:text-[#C27C48]">Contact</a></li>
+
+</ul>
+
+</div>
+
+<!-- Hours -->
+
+<div>
+
+<h3 class="text-white font-bold text-xl mb-6">
+
+Opening Hours
+
+</h3>
+
+<div class="space-y-4 text-gray-400">
+
+<p>Monday - Friday</p>
+
+<p>8:00 AM – 10:00 PM</p>
+
+<p>Saturday - Sunday</p>
+
+<p>9:00 AM – 11:00 PM</p>
+
+</div>
+
+</div>
+
+<!-- Contact -->
+
+<div>
+
+<h3 class="text-white font-bold text-xl mb-6">
+
+Contact
+
+</h3>
+
+<div class="space-y-4 text-gray-400">
+
+<p>📍 Main Coffee Street</p>
+
+<p>📞 +92 300 1234567</p>
+
+<p>✉ info@koffee.com</p>
+
+</div>
+
+<div class="flex gap-4 mt-8">
+
+<a href="#"
+class="w-11 h-11 rounded-full bg-[#161616] flex items-center justify-center hover:bg-[#883b04] duration-300">
+
+<i class="fab fa-facebook-f text-white"></i>
+
+</a>
+
+<a href="#"
+class="w-11 h-11 rounded-full bg-[#161616] flex items-center justify-center hover:bg-[#883b04] duration-300">
+
+<i class="fab fa-instagram text-white"></i>
+
+</a>
+
+<a href="#"
+class="w-11 h-11 rounded-full bg-[#161616] flex items-center justify-center hover:bg-[#883b04] duration-300">
+
+<i class="fab fa-twitter text-white"></i>
+
+</a>
+
+<a href="#"
+class="w-11 h-11 rounded-full bg-[#161616] flex items-center justify-center hover:bg-[#883b04] duration-300">
+
+<i class="fab fa-youtube text-white"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="border-white/10 my-12">
+
+<div class="flex flex-col md:flex-row justify-between items-center">
+
+<p class="text-gray-500">
+
+© 2026 Koffee. All Rights Reserved.
+
+</p>
+
+<p class="text-gray-500 mt-4 md:mt-0">
+
+Designed & Developed by <span class="text-[#C27C48]">Khuzama</span>
+
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+{% endblock %}

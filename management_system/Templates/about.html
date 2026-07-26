@@ -1,0 +1,1006 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+
+<!-- ========================= -->
+<!-- HERO SECTION -->
+<!-- ========================= -->
+
+<section class="relative overflow-hidden bg-gradient-to-br from-black via-[#120d09] to-black">
+
+    <!-- Background Glow -->
+    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-orange-600/20 blur-[180px]"></div>
+
+    <div class="absolute -bottom-40 right-0 w-[500px] h-[500px] rounded-full bg-[#8B4513]/20 blur-[180px]"></div>
+
+    <!-- Coffee Beans Decoration -->
+    <div class="absolute top-20 left-10 w-24 h-24 rounded-full border border-orange-500/20 animate-pulse"></div>
+
+    <div class="absolute bottom-20 right-20 w-36 h-36 rounded-full border border-orange-500/10 animate-pulse"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 py-32">
+
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+
+            <!-- Content -->
+
+            <div>
+
+                <span class="inline-flex items-center gap-3 text-orange-500 uppercase tracking-[6px] font-bold">
+
+                    <span class="w-10 h-[2px] bg-orange-500"></span>
+
+                    Since 2015
+
+                </span>
+
+                <h1 class="mt-8 text-5xl md:text-7xl font-black leading-tight text-white">
+
+                    Crafted With
+
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400">
+
+                        Passion
+
+                    </span>
+
+                    Served With Love
+
+                </h1>
+
+                <p class="mt-8 text-gray-400 leading-8 text-lg">
+
+                    Every cup tells a story. We carefully source premium coffee beans,
+                    roast them with precision, and serve unforgettable flavors in an
+                    atmosphere that feels like home.
+
+                </p>
+
+                <div class="flex flex-wrap gap-5 mt-12">
+
+                    <a href="/product/"
+
+                        class="px-10 py-4 rounded-full bg-orange-600 hover:bg-orange-500 text-white font-semibold transition duration-500 hover:scale-105">
+
+                        Explore Menu
+
+                    </a>
+
+                    <a href="/contact/"
+
+                        class="px-10 py-4 rounded-full border border-white/20 text-white hover:border-orange-500 hover:text-orange-500 transition duration-500">
+
+                        Contact Us
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Image -->
+
+            <div class="relative group">
+
+                <div class="absolute inset-0 bg-orange-500 rounded-[40px] blur-3xl opacity-20 group-hover:opacity-40 transition duration-700"></div>
+
+                <img
+
+                    src="{% static 'image/about-img.webp' %}"
+
+                    class="relative rounded-[40px] shadow-2xl border border-white/10 group-hover:scale-105 transition duration-700"
+
+                    alt="Coffee">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- STORY -->
+<!-- ========================= -->
+
+<section class="py-28 bg-[#0f0f0f]">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+
+            <div>
+
+                <img
+
+                    src="{% static 'image/about-img.webp' %}"
+
+                    class="rounded-3xl shadow-2xl hover:scale-105 duration-700"
+
+                    alt="Story">
+
+            </div>
+
+            <div>
+
+                <span class="uppercase tracking-[6px] text-orange-500 font-bold">
+
+                    Our Story
+
+                </span>
+
+                <h2 class="text-5xl font-black text-white mt-6">
+
+                    More Than Just Coffee
+
+                </h2>
+
+                <p class="text-gray-400 leading-8 mt-8">
+
+                    We started with one simple mission:
+                    to create coffee that inspires people every single day.
+
+                    Every bean is selected from trusted farms and roasted in small
+                    batches to maintain freshness and exceptional flavor.
+
+                </p>
+
+                <p class="text-gray-400 leading-8 mt-6">
+
+                    From handcrafted espresso to creamy cappuccinos,
+                    every drink is prepared by passionate baristas who
+                    believe coffee is an experience—not just a beverage.
+
+                </p>
+
+                <div class="grid grid-cols-2 gap-6 mt-10">
+
+                    <div class="p-6 rounded-2xl bg-[#171717] border border-white/10 hover:border-orange-500 duration-500">
+
+                        <h3 class="text-orange-500 text-4xl font-black">
+
+                            10+
+
+                        </h3>
+
+                        <p class="text-gray-400 mt-3">
+
+                            Years Experience
+
+                        </p>
+
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-[#171717] border border-white/10 hover:border-orange-500 duration-500">
+
+                        <h3 class="text-orange-500 text-4xl font-black">
+
+                            5K+
+
+                        </h3>
+
+                        <p class="text-gray-400 mt-3">
+
+                            Happy Customers
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- PREMIUM STATISTICS -->
+<!-- ========================= -->
+
+<section class="py-28 bg-black border-y border-white/10">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid md:grid-cols-4 gap-8">
+
+            <div class="group bg-[#171717] rounded-3xl p-10 border border-white/10 hover:border-orange-500 hover:-translate-y-3 transition-all duration-500">
+
+                <h2 class="text-6xl font-black text-orange-500 group-hover:scale-110 transition">
+
+                    10+
+
+                </h2>
+
+                <p class="text-gray-400 mt-4 uppercase tracking-widest">
+
+                    Years Experience
+
+                </p>
+
+            </div>
+
+            <div class="group bg-[#171717] rounded-3xl p-10 border border-white/10 hover:border-orange-500 hover:-translate-y-3 transition-all duration-500">
+
+                <h2 class="text-6xl font-black text-orange-500">
+
+                    25+
+
+                </h2>
+
+                <p class="text-gray-400 mt-4 uppercase tracking-widest">
+
+                    Coffee Blends
+
+                </p>
+
+            </div>
+
+            <div class="group bg-[#171717] rounded-3xl p-10 border border-white/10 hover:border-orange-500 hover:-translate-y-3 transition-all duration-500">
+
+                <h2 class="text-6xl font-black text-orange-500">
+
+                    5000+
+
+                </h2>
+
+                <p class="text-gray-400 mt-4 uppercase tracking-widest">
+
+                    Happy Clients
+
+                </p>
+
+            </div>
+
+            <div class="group bg-[#171717] rounded-3xl p-10 border border-white/10 hover:border-orange-500 hover:-translate-y-3 transition-all duration-500">
+
+                <h2 class="text-6xl font-black text-orange-500">
+
+                    4.9★
+
+                </h2>
+
+                <p class="text-gray-400 mt-4 uppercase tracking-widest">
+
+                    Customer Rating
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================= -->
+<!-- WHY CHOOSE US -->
+<!-- ========================= -->
+
+<section class="py-28 bg-[#0d0d0d] overflow-hidden">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-20">
+
+            <span class="uppercase tracking-[6px] text-orange-500 font-bold">
+
+                Why Choose Us
+
+            </span>
+
+            <h2 class="text-5xl font-black text-white mt-5">
+
+                Crafted For Coffee Lovers
+
+            </h2>
+
+            <p class="max-w-2xl mx-auto mt-6 text-gray-400 leading-8">
+
+                Every cup reflects our commitment to quality, freshness,
+                and exceptional hospitality.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+            <!-- Card -->
+
+            <div class="group p-10 rounded-3xl bg-[#181818]
+            border border-white/10
+            hover:border-orange-500
+            hover:-translate-y-4
+            hover:shadow-2xl
+            hover:shadow-orange-500/20
+            duration-500">
+
+                <div class="w-16 h-16 rounded-full
+                bg-orange-500/10
+                flex items-center justify-center
+                text-3xl
+                text-orange-500
+                group-hover:bg-orange-500
+                group-hover:text-white
+                duration-500">
+
+                    ☕
+
+                </div>
+
+                <h3 class="text-2xl font-bold text-white mt-8">
+
+                    Premium Beans
+
+                </h3>
+
+                <p class="text-gray-400 mt-5 leading-8">
+
+                    Hand-selected coffee beans sourced directly from
+                    premium farms around the world.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Card -->
+
+            <div class="group p-10 rounded-3xl bg-[#181818]
+            border border-white/10
+            hover:border-orange-500
+            hover:-translate-y-4
+            hover:shadow-2xl
+            hover:shadow-orange-500/20
+            duration-500">
+
+                <div class="w-16 h-16 rounded-full
+                bg-orange-500/10
+                flex items-center justify-center
+                text-3xl
+                text-orange-500
+                group-hover:bg-orange-500
+                group-hover:text-white
+                duration-500">
+
+                    👨‍🍳
+
+                </div>
+
+                <h3 class="text-2xl font-bold text-white mt-8">
+
+                    Expert Baristas
+
+                </h3>
+
+                <p class="text-gray-400 mt-5 leading-8">
+
+                    Every drink is handcrafted by experienced baristas
+                    who love creating memorable coffee experiences.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Card -->
+
+            <div class="group p-10 rounded-3xl bg-[#181818]
+            border border-white/10
+            hover:border-orange-500
+            hover:-translate-y-4
+            hover:shadow-2xl
+            hover:shadow-orange-500/20
+            duration-500">
+
+                <div class="w-16 h-16 rounded-full
+                bg-orange-500/10
+                flex items-center justify-center
+                text-3xl
+                text-orange-500
+                group-hover:bg-orange-500
+                group-hover:text-white
+                duration-500">
+
+                    🌱
+
+                </div>
+
+                <h3 class="text-2xl font-bold text-white mt-8">
+
+                    Organic Coffee
+
+                </h3>
+
+                <p class="text-gray-400 mt-5 leading-8">
+
+                    Freshly roasted organic beans that deliver rich aroma
+                    and exceptional flavor every day.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Card -->
+
+            <div class="group p-10 rounded-3xl bg-[#181818]
+            border border-white/10
+            hover:border-orange-500
+            hover:-translate-y-4
+            hover:shadow-2xl
+            hover:shadow-orange-500/20
+            duration-500">
+
+                <div class="w-16 h-16 rounded-full
+                bg-orange-500/10
+                flex items-center justify-center
+                text-3xl
+                text-orange-500
+                group-hover:bg-orange-500
+                group-hover:text-white
+                duration-500">
+
+                    ❤️
+
+                </div>
+
+                <h3 class="text-2xl font-bold text-white mt-8">
+
+                    Made With Love
+
+                </h3>
+
+                <p class="text-gray-400 mt-5 leading-8">
+
+                    Every cup is crafted with passion to create an
+                    unforgettable coffee experience.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- OUR COFFEE JOURNEY -->
+<!-- ========================= -->
+
+<section class="py-28 bg-black border-y border-white/10">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="text-center mb-20">
+
+<span class="uppercase tracking-[6px] text-orange-500">
+
+Our Journey
+
+</span>
+
+<h2 class="text-5xl font-black text-white mt-5">
+
+From Bean To Cup
+
+</h2>
+
+</div>
+
+
+
+<div class="relative">
+
+<div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-[3px] bg-orange-500/20"></div>
+
+
+
+<!-- Step -->
+
+<div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+
+<div class="lg:text-right">
+
+<h3 class="text-3xl font-bold text-white">
+
+01. Selecting Premium Beans
+
+</h3>
+
+<p class="text-gray-400 leading-8 mt-6">
+
+We partner with trusted farms around the globe
+to source only the finest Arabica beans.
+
+</p>
+
+</div>
+
+<div class="relative">
+
+<div class="absolute -left-10 top-4 hidden lg:flex
+w-8 h-8 rounded-full bg-orange-500 border-8 border-black"></div>
+
+<div class="rounded-3xl bg-[#181818]
+border border-white/10
+p-10 hover:border-orange-500 duration-500">
+
+<h4 class="text-orange-500 font-bold text-xl">
+
+Fresh Origins
+
+</h4>
+
+<p class="text-gray-400 mt-4 leading-7">
+
+Premium beans harvested with care.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+
+<div class="order-2 lg:order-1">
+
+<div class="rounded-3xl bg-[#181818]
+border border-white/10
+p-10 hover:border-orange-500 duration-500">
+
+<h4 class="text-orange-500 font-bold text-xl">
+
+Traditional Roasting
+
+</h4>
+
+<p class="text-gray-400 mt-4 leading-7">
+
+Every batch is roasted to perfection.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="order-1 lg:order-2">
+
+<h3 class="text-3xl font-bold text-white">
+
+02. Small Batch Roasting
+
+</h3>
+
+<p class="text-gray-400 leading-8 mt-6">
+
+Each roast is monitored carefully to unlock
+rich aroma and balanced flavors.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+
+<div class="lg:text-right">
+
+<h3 class="text-3xl font-bold text-white">
+
+03. Freshly Brewed
+
+</h3>
+
+<p class="text-gray-400 leading-8 mt-6">
+
+Served fresh by experienced baristas using
+modern brewing techniques.
+
+</p>
+
+</div>
+
+<div>
+
+<div class="rounded-3xl bg-[#181818]
+border border-white/10
+p-10 hover:border-orange-500 duration-500">
+
+<h4 class="text-orange-500 font-bold text-xl">
+
+Perfect Cup
+
+</h4>
+
+<p class="text-gray-400 mt-4 leading-7">
+
+Every sip delivers freshness and quality.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- PREMIUM CALL TO ACTION -->
+<!-- ========================= -->
+
+<section class="relative py-32 overflow-hidden bg-gradient-to-br from-[#1a120b] via-black to-[#0d0d0d]">
+
+    <!-- Background Glow -->
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[180px]"></div>
+
+    <div class="relative max-w-5xl mx-auto px-6 text-center">
+
+        <span class="uppercase tracking-[6px] text-orange-500 font-semibold">
+            Visit Today
+        </span>
+
+        <h2 class="mt-6 text-5xl md:text-6xl font-black text-white leading-tight">
+
+            Experience The Perfect
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-orange-500 to-yellow-400">
+                Cup Of Coffee
+            </span>
+
+        </h2>
+
+        <p class="mt-8 text-gray-400 leading-8 text-lg max-w-3xl mx-auto">
+
+            Join thousands of coffee lovers who enjoy handcrafted beverages,
+            freshly roasted beans, and unforgettable moments every day.
+
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-6 mt-12">
+
+            <a href="/menu/"
+                class="px-10 py-4 rounded-full bg-orange-600 text-white font-semibold
+                hover:bg-orange-500 hover:scale-105 duration-500 shadow-xl shadow-orange-500/20">
+
+                Explore Menu
+
+            </a>
+
+            <a href="/contact/"
+                class="px-10 py-4 rounded-full border border-white/20
+                text-white hover:border-orange-500 hover:text-orange-500
+                duration-500">
+
+                Contact Us
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- NEWSLETTER -->
+<!-- ========================= -->
+
+<section class="py-24 bg-[#101010] border-y border-white/10">
+
+    <div class="max-w-5xl mx-auto px-6">
+
+        <div class="rounded-[40px] bg-[#181818] border border-white/10 p-12 text-center">
+
+            <span class="uppercase tracking-[6px] text-orange-500">
+
+                Newsletter
+
+            </span>
+
+            <h2 class="text-4xl font-black text-white mt-5">
+
+                Stay Updated
+
+            </h2>
+
+            <p class="text-gray-400 mt-5 leading-8">
+
+                Subscribe to receive exclusive offers,
+                new coffee arrivals, and seasonal specials.
+
+            </p>
+
+            <form class="mt-10 flex flex-col md:flex-row gap-4 justify-center">
+
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+
+                    class="w-full md:w-[420px]
+                    bg-[#111]
+                    border border-white/10
+                    rounded-full
+                    px-6
+                    py-4
+                    text-white
+                    placeholder-gray-500
+                    focus:outline-none
+                    focus:border-orange-500">
+
+                <button
+
+                    class="px-8 py-4 rounded-full
+                    bg-orange-600
+                    text-white
+                    font-semibold
+                    hover:bg-orange-500
+                    hover:scale-105
+                    duration-300">
+
+                    Subscribe
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer class="bg-black">
+
+<div class="max-w-7xl mx-auto px-6 py-20">
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+<!-- Logo -->
+
+<div>
+
+<img
+
+src="{% static 'image/koffee-logo.webp' %}"
+
+class="h-16 mb-6">
+
+<p class="text-gray-400 leading-8">
+
+Discover handcrafted coffee made from premium beans,
+served with passion and excellence.
+
+</p>
+
+</div>
+
+
+
+<!-- Links -->
+
+<div>
+
+<h3 class="text-white font-bold text-xl mb-6">
+
+Quick Links
+
+</h3>
+
+<ul class="space-y-4 text-gray-400">
+
+<li>
+
+<a href="/" class="hover:text-orange-500 duration-300">
+
+Home
+
+</a>
+
+</li>
+
+<li>
+
+<a href="/about/" class="hover:text-orange-500 duration-300">
+
+About
+
+</a>
+
+</li>
+
+<li>
+
+<a href="/menu/" class="hover:text-orange-500 duration-300">
+
+Menu
+
+</a>
+
+</li>
+
+<li>
+
+<a href="/contact/" class="hover:text-orange-500 duration-300">
+
+Contact
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+
+
+<!-- Contact -->
+
+<div>
+
+<h3 class="text-white font-bold text-xl mb-6">
+
+Contact
+
+</h3>
+
+<div class="space-y-4 text-gray-400">
+
+<p>📍 Islamabad, Pakistan</p>
+
+<p>📞 +92 300 1234567</p>
+
+<p>✉ info@koffee.com</p>
+
+</div>
+
+</div>
+
+
+
+<!-- Social -->
+
+<div>
+
+<h3 class="text-white font-bold text-xl mb-6">
+
+Follow Us
+
+</h3>
+
+<div class="flex gap-4">
+
+<a href="#"
+
+class="w-12 h-12 rounded-full bg-[#181818]
+border border-white/10
+flex items-center justify-center
+text-white
+hover:bg-orange-600
+hover:scale-110
+duration-300">
+
+<i class="fab fa-facebook-f"></i>
+
+</a>
+
+<a href="#"
+
+class="w-12 h-12 rounded-full bg-[#181818]
+border border-white/10
+flex items-center justify-center
+text-white
+hover:bg-orange-600
+hover:scale-110
+duration-300">
+
+<i class="fab fa-instagram"></i>
+
+</a>
+
+<a href="#"
+
+class="w-12 h-12 rounded-full bg-[#181818]
+border border-white/10
+flex items-center justify-center
+text-white
+hover:bg-orange-600
+hover:scale-110
+duration-300">
+
+<i class="fab fa-twitter"></i>
+
+</a>
+
+<a href="#"
+
+class="w-12 h-12 rounded-full bg-[#181818]
+border border-white/10
+flex items-center justify-center
+text-white
+hover:bg-orange-600
+hover:scale-110
+duration-300">
+
+<i class="fab fa-linkedin-in"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- Bottom -->
+
+<div class="border-t border-white/10 mt-16 pt-8
+flex flex-col md:flex-row
+justify-between items-center">
+
+<p class="text-gray-500">
+
+© 2026 Koffee. All Rights Reserved.
+
+</p>
+
+<p class="text-gray-500 mt-4 md:mt-0">
+
+Designed & Developed by
+<span class="text-orange-500 font-semibold">
+Khuzama
+</span>
+
+</p>
+
+</div>
+
+</div>
+
+</footer>
+{% endblock %}

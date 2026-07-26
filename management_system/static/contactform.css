@@ -21,21 +21,22 @@ body{
   font-size: 12px;
   color: #bbb;
 }
-
 .form-group input,
 .form-group textarea {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid white;
-  outline: none;
-  font-size: 12px;
+    width: 100%;
+    padding: 14px 18px;
+    background: #1b1b1b;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 12px;
+    font-size: 15px;
 }
 
-.form-group textarea {
-  min-height: 120px;
-  resize: none;
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #888;
 }
+
 
 .btn-submit {
   width: 100%;

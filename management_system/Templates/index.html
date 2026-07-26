@@ -2,211 +2,950 @@
 {% load static %}
 
 {% block hero %}
-<section class="hero-page bg-black">
-<nav class="bg-black text-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="flex  items-center justify-between">
 
-      <!-- Left: Logo -->
-      <div class="flex items-center pt-7 pb-5 gap-2">
-        <img 
-          src="{% static 'image/koffee-logo.webp' %}" 
-          alt="Logo"
-          class="h-12 w-auto"
-        >
-      </div>
+<!-- ========================= -->
+<!-- Premium Navbar -->
+<!-- ========================= -->
 
-      <!-- Right: Menu -->
-      <ul class="hidden md:flex items-center gap-8 text-lg font-semibold">
-        <li>
-          <a href="#" class="hover:text-[#883b04] transition">
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="/about/" class="hover:text-[#883b04] transition">
-            About
-          </a>
-        </li>
-        <li>
-          <a href="/product/" class="hover:text-[#883b04] transition">
-            Menu
-          </a>
-        </li>
-        <li>
-          <a href="/contact/" class="hover:text-[#883b04] transition">
-            Contact
-          </a>
-        </li>
-        {% comment %} <li>
-          <a href="/login/" class="hover:text-[#883b04] transition">
-            Login
-          </a>
-        </li>
-        <li>
-          <a href="/logout/" class="hover:text-[#883b04] transition">
-            Logout
-          </a>
-        </li> {% endcomment %}
-        
-      </ul>
+<nav class="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/10">
 
-        <!-- Dropdown -->
-        <div class="relative group">
-          <button class="flex items-center focus:outline-none">
-    <!-- User Icon -->
-<i class="fa-regular fa-user "></i>
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
-  </button>
+        <div class="flex items-center justify-between h-24">
 
-          <!-- Dropdown Menu -->
-          <div
-            class="absolute right-0 mt-3 w-40 text-white bg-[#883b04] rounded-md shadow-lg
-           border border-gray-100 opacity-80 invisible group-hover:visible">
-              <a href="{% url 'logout' %}"
-                 class="block px-4 py-2 text-[#883b04] hover:bg-gray-100">
-                Logout
-              </a>
-              <a href="{% url 'login' %}"
-                 class="block px-4 py-2 text-[#883b04] hover:bg-gray-100">
-                Login
-              </a>
-          </div>
+            <!-- Logo -->
+
+            <a href="/home/" class="flex items-center gap-3">
+
+                <img
+                    src="{% static 'image/koffee-logo.webp' %}"
+                    class="h-14">
+
+            </a>
+
+            <!-- Desktop Menu -->
+
+            <ul class="hidden lg:flex items-center gap-10 text-white font-medium">
+
+                <li>
+                    <a href="/home/"
+                       class="hover:text-[#C27C48] transition duration-300">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/about/"
+                       class="hover:text-[#C27C48] transition duration-300">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/product/"
+                       class="hover:text-[#C27C48] transition duration-300">
+                        Menu
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/contact/"
+                       class="hover:text-[#C27C48] transition duration-300">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Right -->
+
+            <div class="flex items-center gap-5">
+
+                <!-- Cart -->
+
+                <a href="/cart/"
+                   class="text-white hover:text-[#C27C48] text-xl duration-300">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                </a>
+
+                <!-- User -->
+
+                <div class="relative group">
+
+                    <button
+                        class="w-11 h-11 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-[#883b04] transition">
+
+                        <i class="fa-regular fa-user text-white"></i>
+
+                    </button>
+
+                    <div
+                        class="absolute right-0 mt-4 w-44 rounded-2xl bg-[#161616] border border-white/10 shadow-xl opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300">
+
+                        {% if user.is_authenticated %}
+
+                        <a href="{% url 'logout' %}"
+                           class="block px-5 py-3 hover:bg-[#883b04] rounded-t-2xl text-white">
+
+                            Logout
+
+                        </a>
+
+                        {% else %}
+
+                        <a href="{% url 'login' %}"
+                           class="block px-5 py-3 hover:bg-[#883b04] rounded-t-2xl text-white">
+
+                            Login
+
+                        </a>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
 
     </div>
-  </div>
-  </div>
+
 </nav>
+
+<!-- ========================= -->
+<!-- Hero -->
+<!-- ========================= -->
+
+<section
+class="relative h-screen overflow-hidden bg-cover bg-center"
+style="background-image:url('{% static 'image/hero-slide-3.webp' %}')">
+
+    <!-- Overlay -->
+
+    <div class="absolute inset-0 bg-black/70"></div>
+
+    <!-- Gradient -->
+
+    <div
+    class="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent">
     </div>
-  </div>
-    </nav>
-    {% comment %} Hero-Sectio {% endcomment %}
-    <section 
-    class="relative h-[88vh] flex items-center justify-center bg-cover bg-center"
-    style="background-image: url('{% static "image\hero-slide-3.webp" %}');"
-    >
-    <!-- Dark overlay -->
-    <div class="absolute inset-0 bg-black/60"></div>
+
+    <!-- Blur Circle -->
+
+    <div
+    class="absolute -left-24 top-44 w-96 h-96 rounded-full bg-[#883b04] blur-[170px] opacity-30 animate-pulse">
+    </div>
+
+    <div
+    class="absolute right-0 bottom-0 w-[500px] h-[500px] rounded-full bg-orange-600 blur-[180px] opacity-10">
+    </div>
+
     <!-- Content -->
-    <div class="relative z-10 text-center max-w-3xl px-6 translate-y-6
-                animate-fadeUp">
-    <h1 class="font-regular italic text-white
-                text-4xl md:text-5xl">
-        Welcome Our Koffee
-        </h1>
-        <h1 class="text-white text-4xl md:text-5xl font-bold leading-tight">
-        Live Your Life With Energy
-        </h1>
 
-        <p class="mt-4 text-gray-300 text-base md:text-lg">
-        Experience premium coffee made with passion,  
-        quality beans, and timeless taste.
-        </p>
+    <div
+    class="relative z-20 h-full flex items-center">
 
-        <!-- Button -->
-        <div class="mt-8">
-        <a 
-            href="/menu/"
-            class="inline-block px-8 py-3 rounded-full
-                bg-white text-black font-semibold
-                hover:bg-[#883b04] hover:text-white
-                transition-all duration-300
-                hover:scale-105"
-        >
-            View Menu
-        </a>
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 w-full">
+
+            <div class="max-w-3xl">
+
+                <span
+                class="uppercase tracking-[8px] text-[#C27C48] font-semibold">
+
+                    PREMIUM COFFEE
+
+                </span>
+
+                <h1
+                class="mt-8 text-5xl md:text-7xl font-black text-white leading-tight">
+
+                    Crafted With
+
+                    <span class="text-[#C27C48]">
+
+                        Passion
+
+                    </span>
+
+                    <br>
+
+                    Brewed For
+
+                    <span class="text-[#C27C48]">
+
+                        Perfection
+
+                    </span>
+
+                </h1>
+
+                <p
+                class="mt-8 text-lg text-gray-300 leading-8 max-w-2xl">
+
+                    Every cup begins with carefully selected beans and ends
+                    with an unforgettable experience. From rich espresso to
+                    handcrafted specialties, we serve coffee that inspires
+                    every moment.
+
+                </p>
+
+                <!-- Buttons -->
+
+                <div class="mt-12 flex flex-wrap gap-5">
+
+                    <a href="/product/"
+                       class="px-10 py-4 rounded-full bg-[#883b04] text-white font-semibold hover:bg-[#a24a09] hover:scale-105 transition duration-300 shadow-xl">
+
+                        Explore Menu
+
+                    </a>
+
+                    <a href="/about/"
+                       class="px-10 py-4 rounded-full border border-white/20 text-white hover:bg-white hover:text-black transition duration-300">
+
+                        Learn More
+
+                    </a>
+
+                </div>
+
+                <!-- Features -->
+
+                <div class="mt-16 flex flex-wrap gap-8 text-gray-300">
+
+                    <div class="flex items-center gap-3">
+
+                        <i class="fa-solid fa-mug-hot text-[#C27C48]"></i>
+
+                        Fresh Beans
+
+                    </div>
+
+                    <div class="flex items-center gap-3">
+
+                        <i class="fa-solid fa-award text-[#C27C48]"></i>
+
+                        Premium Quality
+
+                    </div>
+
+                    <div class="flex items-center gap-3">
+
+                        <i class="fa-solid fa-truck-fast text-[#C27C48]"></i>
+
+                        Fast Delivery
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>
 
-    </section>
+    <!-- Scroll Down -->
 
+    <div
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+
+        <div
+        class="w-8 h-14 rounded-full border-2 border-white flex justify-center">
+
+            <div
+            class="w-1.5 h-3 bg-white rounded-full mt-2 animate-pulse">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock %}
+
 {% block about %}
-<section class="py-24 bg-white overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+<section class="relative py-28 bg-[#0E0E0E] overflow-hidden">
 
-    <!-- Image -->
-    <div class="relative">
-      <img class="h-110" src="{% static 'image\about-img.webp' %}"
-           class="rounded-2xl shadow-xl">
-      <div class="absolute -bottom-6 -left-6 bg-[#883b04] text-white p-6 rounded-xl shadow-lg">
-        <p class="text-2xl font-bold">10+</p>
-        <p class="text-sm">Years Experience</p>
-      </div>
-    </div>
+    <!-- Background Glow -->
 
-    <!-- Content -->
-    <div>
-      <span class="text-[#883b04] font-regular-lg uppercase  tracking-widest">
-        About Us
-      </span>
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#883b04] opacity-20 blur-[170px] rounded-full"></div>
 
-      <h2 class="text-4xl font-extrabold text-gray-900 mt-4 leading-tight">
-        Crafted Coffee <br> Brewed With Passion
-      </h2>
+    <div class="absolute bottom-0 right-0 w-[450px] h-[450px] bg-orange-500 opacity-10 blur-[170px] rounded-full"></div>
 
-      <p class="text-gray-600 mt-6 leading-relaxed">
-       We serve premium coffee made from carefully selected beans, rich aromas, and expert brewing techniques. Every cup is crafted to deliver comfort, quality, and consistency.
-      </p>
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
-      <ul class="mt-6 space-y-3 text-gray-700">
-        <li>✔ Freshly roasted coffee beans</li>
-        <li>✔ Skilled baristas & perfect blends</li>
-        <li>✔ Warm, hygienic, and welcoming space</li>
-      </ul>
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
 
-      <div class="mt-8">
-        <a 
-            href="/menu/"
-            class="inline-block px-8 py-3 rounded-full border-2
-                bg-white text-black font-semibold
-                hover:bg-[#883b04] hover:text-white
-                transition-all duration-300
-                hover:scale-105"
-        >
-            Explore Menu
-        </a>
+            <!-- Images -->
+
+            <div class="relative">
+
+                <!-- Main Image -->
+
+                <img
+                    src="{% static 'image/about-img.webp' %}"
+                    class="rounded-3xl shadow-2xl w-full">
+
+                <!-- Floating Image -->
+
+                <img
+                    src="{% static 'image/images(2).jpg' %}"
+                    class="absolute -bottom-10 -right-10 w-64 rounded-3xl border-8 border-[#0E0E0E] shadow-2xl hidden md:block">
+
+                <!-- Experience Card -->
+
+                <div class="absolute top-8 -left-6 bg-[#883b04] text-white rounded-2xl px-8 py-6 shadow-2xl">
+
+                    <h2 class="text-4xl font-black">
+                        10+
+                    </h2>
+
+                    <p class="text-sm tracking-wider uppercase">
+                        Years Experience
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Content -->
+
+            <div>
+
+                <span class="uppercase tracking-[6px] text-[#C27C48] font-semibold">
+
+                    About Us
+
+                </span>
+
+                <h2 class="mt-6 text-5xl font-black text-white leading-tight">
+
+                    More Than Coffee,
+
+                    <span class="text-[#C27C48]">
+
+                        It's A Lifestyle
+
+                    </span>
+
+                </h2>
+
+                <p class="mt-8 text-gray-400 leading-8">
+
+                    We believe coffee should be more than just a drink—it should
+                    be an experience. Every bean is carefully selected, expertly
+                    roasted, and handcrafted by passionate baristas to ensure
+                    every cup delivers exceptional taste and aroma.
+
+                </p>
+
+                <p class="mt-6 text-gray-400 leading-8">
+
+                    From morning espresso to evening conversations, our café is
+                    designed to create memorable moments with premium quality,
+                    welcoming service, and a relaxing atmosphere.
+
+                </p>
+
+                <!-- Features -->
+
+                <div class="grid sm:grid-cols-2 gap-6 mt-10">
+
+                    <div class="flex items-center gap-4">
+
+                        <div class="w-12 h-12 rounded-full bg-[#883b04] flex items-center justify-center">
+
+                            <i class="fa-solid fa-mug-hot text-white"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="text-white font-bold">
+                                Premium Beans
+                            </h4>
+
+                            <p class="text-gray-500 text-sm">
+                                Freshly roasted every day.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-4">
+
+                        <div class="w-12 h-12 rounded-full bg-[#883b04] flex items-center justify-center">
+
+                            <i class="fa-solid fa-award text-white"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="text-white font-bold">
+                                Expert Baristas
+                            </h4>
+
+                            <p class="text-gray-500 text-sm">
+                                Crafted with passion.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-4">
+
+                        <div class="w-12 h-12 rounded-full bg-[#883b04] flex items-center justify-center">
+
+                            <i class="fa-solid fa-seedling text-white"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="text-white font-bold">
+                                Organic Coffee
+                            </h4>
+
+                            <p class="text-gray-500 text-sm">
+                                Sustainably sourced beans.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-4">
+
+                        <div class="w-12 h-12 rounded-full bg-[#883b04] flex items-center justify-center">
+
+                            <i class="fa-solid fa-heart text-white"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="text-white font-bold">
+                                Made With Love
+                            </h4>
+
+                            <p class="text-gray-500 text-sm">
+                                Every cup prepared with care.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Button -->
+
+                <div class="mt-12">
+
+                    <a href="/product/"
+                       class="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-[#883b04] text-white font-semibold hover:bg-[#a24a09] transition duration-300 hover:scale-105">
+
+                        Explore Menu
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
+
     </div>
 
-  </div>
 </section>
-{% endblock  %}
-{% comment %} Footer {% endcomment %}
+<section class="py-28 bg-black">
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+        <div class="text-center mb-16">
+
+            <span class="uppercase tracking-[6px] text-[#C27C48]">
+
+                Why Choose Us
+
+            </span>
+
+            <h2 class="text-5xl font-black text-white mt-5">
+
+                Coffee Crafted To Perfection
+
+            </h2>
+
+            <p class="text-gray-400 mt-6 max-w-2xl mx-auto">
+
+                We combine premium ingredients, skilled craftsmanship,
+                and exceptional service to create an unforgettable coffee experience.
+
+            </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+            <!-- Card -->
+
+            <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:border-[#C27C48] hover:-translate-y-3 transition-all duration-500">
+
+                <div class="w-16 h-16 rounded-full bg-[#883b04] flex items-center justify-center text-white text-2xl group-hover:rotate-12 transition">
+
+                    <i class="fa-solid fa-mug-hot"></i>
+
+                </div>
+
+                <h3 class="text-white text-2xl font-bold mt-8">
+
+                    Fresh Coffee
+
+                </h3>
+
+                <p class="text-gray-400 mt-5 leading-7">
+
+                    Brewed fresh every day using carefully selected premium beans.
+
+                </p>
+
+            </div>
+
+            <!-- Card -->
+
+            <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:border-[#C27C48] hover:-translate-y-3 transition-all duration-500">
+
+                <div class="w-16 h-16 rounded-full bg-[#883b04] flex items-center justify-center text-white text-2xl group-hover:rotate-12 transition">
+
+                    <i class="fa-solid fa-user-chef"></i>
+
+                </div>
+
+                <h3 class="text-white text-2xl font-bold mt-8">
+
+                    Skilled Baristas
+
+                </h3>
+
+                <p class="text-gray-400 mt-5 leading-7">
+
+                    Passionate professionals crafting every cup with precision.
+
+                </p>
+
+            </div>
+
+            <!-- Card -->
+
+            <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:border-[#C27C48] hover:-translate-y-3 transition-all duration-500">
+
+                <div class="w-16 h-16 rounded-full bg-[#883b04] flex items-center justify-center text-white text-2xl group-hover:rotate-12 transition">
+
+                    <i class="fa-solid fa-truck-fast"></i>
+
+                </div>
+
+                <h3 class="text-white text-2xl font-bold mt-8">
+
+                    Fast Delivery
+
+                </h3>
+
+                <p class="text-gray-400 mt-5 leading-7">
+
+                    Fresh coffee delivered quickly while maintaining its rich flavor.
+
+                </p>
+
+            </div>
+
+            <!-- Card -->
+
+            <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:border-[#C27C48] hover:-translate-y-3 transition-all duration-500">
+
+                <div class="w-16 h-16 rounded-full bg-[#883b04] flex items-center justify-center text-white text-2xl group-hover:rotate-12 transition">
+
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+                <h3 class="text-white text-2xl font-bold mt-8">
+
+                    Premium Quality
+
+                </h3>
+
+                <p class="text-gray-400 mt-5 leading-7">
+
+                    Every ingredient is chosen to ensure a consistently exceptional experience.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+
+
 {% block footer %}
- <section 
-    class="relative h-[80vh] flex items-center justify-center bg-cover bg-center"
-    style="background-image: url('{% static "image\footer-bg.webp" %}');"
-    > 
-    <!-- Content -->
-    <div class="relative z-10 text-center max-w-3xl px-6 translate-y-6
-                animate-fadeUp">
-    <div class="flex justify-center pt-7 pb-5 gap-2">
-        <img 
-          src="{% static 'image/koffee-logo.webp' %}" 
-          alt="Logo"
-          class="h-15 w-auto"
-        >
-      </div>
-        <h3 class="font-regular mt-4 text-gray-300 text-base md:text-lg">
-       Discover an elevated coffee experience where craftsmanship meets comfort. From carefully curated cafés to signature blends, we bring you refined flavors and timeless moments — all in one place.
-        </h3>
+ <!-- ================================= -->
+<!-- Testimonials -->
+<!-- ================================= -->
 
-        <!--  email Button -->
-<form method="POST" class="contact-form">
-  {% csrf_token %}
-  <div class="form-group">
-    <label>Email</label>
-    {{ form.email }}
-  </div>
-  <button type="submit" class="btn-submit">Submit</button>
-</form>
+<section class="py-28 bg-black">
+
+      <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+
+            <span class="uppercase tracking-[6px] text-[#C27C48]">
+                Testimonials
+            </span>
+
+            <h2 class="text-5xl font-black text-white mt-4">
+                What Our Customers Say
+            </h2>
+
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <!-- Card -->
+
+            <div class="bg-[#161616] rounded-3xl p-8 border border-white/10 hover:border-[#C27C48] hover:-translate-y-3 duration-500">
+
+                <div class="text-yellow-400 text-xl mb-5">
+                    ★★★★★
+                </div>
+
+                <p class="text-gray-400 leading-8">
+
+                    "The coffee here is absolutely amazing. Rich flavor,
+                    premium quality, and excellent customer service."
+
+                </p>
+
+                <div class="flex items-center mt-8 gap-4">
+
+                    <img
+                    src="{% static 'image/user1.jpg' %}"
+                    class="w-14 h-14 rounded-full object-cover">
+
+                    <div>
+
+                        <h4 class="text-white font-semibold">
+                            Sarah Johnson
+                        </h4>
+
+                        <p class="text-gray-500 text-sm">
+                            Coffee Lover
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card -->
+
+            <div class="bg-[#161616] rounded-3xl p-8 border border-white/10 hover:border-[#C27C48] hover:-translate-y-3 duration-500">
+
+                <div class="text-yellow-400 text-xl mb-5">
+                    ★★★★★
+                </div>
+
+                <p class="text-gray-400 leading-8">
+
+                    "One of the best cafés I've visited. The atmosphere,
+                    coffee, and desserts are all exceptional."
+
+                </p>
+
+                <div class="flex items-center mt-8 gap-4">
+
+                    <img
+                    src="{% static 'image/user2.jpg' %}"
+                    class="w-14 h-14 rounded-full object-cover">
+
+                    <div>
+
+                        <h4 class="text-white font-semibold">
+                            Michael Brown
+                        </h4>
+
+                        <p class="text-gray-500 text-sm">
+                            Entrepreneur
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card -->
+
+            <div class="bg-[#161616] rounded-3xl p-8 border border-white/10 hover:border-[#C27C48] hover:-translate-y-3 duration-500">
+
+                <div class="text-yellow-400 text-xl mb-5">
+                    ★★★★★
+                </div>
+
+                <p class="text-gray-400 leading-8">
+
+                    "Beautiful ambiance with premium coffee. Every visit
+                    feels special."
+
+                </p>
+
+                <div class="flex items-center mt-8 gap-4">
+
+                    <img
+                    src="{% static 'image/user3.jpg' %}"
+                    class="w-14 h-14 rounded-full object-cover">
+
+                    <div>
+
+                        <h4 class="text-white font-semibold">
+                            Emma Wilson
+                        </h4>
+
+                        <p class="text-gray-500 text-sm">
+                            Designer
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
+
 </section>
-<p class="text-[#883b04] flex justify-center font-bold">© 2025 Khuzama | All Rights Reserved</p>
+
+
+<!-- ================================= -->
+<!-- Newsletter -->
+<!-- ================================= -->
+
+<section class="py-24 bg-[#0E0E0E] relative overflow-hidden">
+
+    <div class="absolute -top-32 right-0 w-96 h-96 rounded-full bg-[#883b04] blur-[180px] opacity-20"></div>
+
+    <div class="max-w-4xl mx-auto text-center px-6">
+
+        <span class="uppercase tracking-[6px] text-[#C27C48]">
+            Newsletter
+        </span>
+
+        <h2 class="text-5xl font-black text-white mt-5">
+
+            Stay Connected
+
+        </h2>
+
+        <p class="text-gray-400 mt-6 leading-8">
+
+            Subscribe to receive exclusive offers, coffee updates,
+            and our latest seasonal drinks.
+
+        </p>
+
+        <form class="mt-10 flex flex-col md:flex-row gap-4">
+
+            <input
+            type="email"
+            placeholder="Enter your email..."
+            class="flex-1 rounded-full px-6 py-4 bg-[#1a1a1a] border border-white/10 text-white focus:outline-none focus:border-[#C27C48]">
+
+            <button
+            class="px-10 py-4 rounded-full bg-[#883b04] text-white font-semibold hover:bg-[#a24a09] hover:scale-105 duration-300">
+
+                Subscribe
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================================= -->
+<!-- Footer -->
+<!-- ================================= -->
+
+<footer class="bg-black border-t border-white/10">
+
+<div class="max-w-7xl mx-auto px-6 py-20">
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+<!-- Logo -->
+
+<div>
+
+<img
+src="{% static 'image/koffee-logo.webp' %}"
+class="h-16 mb-6">
+
+<p class="text-gray-400 leading-8">
+
+Crafting premium coffee experiences through
+carefully selected beans, expert brewing,
+and exceptional hospitality.
+
+</p>
+
+</div>
+
+<!-- Links -->
+
+<div>
+
+<h3 class="text-white font-bold text-xl mb-6">
+
+Quick Links
+
+</h3>
+
+<ul class="space-y-4 text-gray-400">
+
+<li><a href="/home/" class="hover:text-[#C27C48]">Home</a></li>
+
+<li><a href="/about/" class="hover:text-[#C27C48]">About</a></li>
+
+<li><a href="/product/" class="hover:text-[#C27C48]">Menu</a></li>
+
+<li><a href="/contact/" class="hover:text-[#C27C48]">Contact</a></li>
+
+</ul>
+
+</div>
+
+<!-- Hours -->
+
+<div>
+
+<h3 class="text-white font-bold text-xl mb-6">
+
+Opening Hours
+
+</h3>
+
+<div class="space-y-4 text-gray-400">
+
+<p>Monday - Friday</p>
+
+<p>8:00 AM – 10:00 PM</p>
+
+<p>Saturday - Sunday</p>
+
+<p>9:00 AM – 11:00 PM</p>
+
+</div>
+
+</div>
+
+<!-- Contact -->
+
+<div>
+
+<h3 class="text-white font-bold text-xl mb-6">
+
+Contact
+
+</h3>
+
+<div class="space-y-4 text-gray-400">
+
+<p>📍 Main Coffee Street</p>
+
+<p>📞 +92 300 1234567</p>
+
+<p>✉ info@koffee.com</p>
+
+</div>
+
+<div class="flex gap-4 mt-8">
+
+<a href="#"
+class="w-11 h-11 rounded-full bg-[#161616] flex items-center justify-center hover:bg-[#883b04] duration-300">
+
+<i class="fab fa-facebook-f text-white"></i>
+
+</a>
+
+<a href="#"
+class="w-11 h-11 rounded-full bg-[#161616] flex items-center justify-center hover:bg-[#883b04] duration-300">
+
+<i class="fab fa-instagram text-white"></i>
+
+</a>
+
+<a href="#"
+class="w-11 h-11 rounded-full bg-[#161616] flex items-center justify-center hover:bg-[#883b04] duration-300">
+
+<i class="fab fa-twitter text-white"></i>
+
+</a>
+
+<a href="#"
+class="w-11 h-11 rounded-full bg-[#161616] flex items-center justify-center hover:bg-[#883b04] duration-300">
+
+<i class="fab fa-youtube text-white"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="border-white/10 my-12">
+
+<div class="flex flex-col md:flex-row justify-between items-center">
+
+<p class="text-gray-500">
+
+© 2026 Koffee. All Rights Reserved.
+
+</p>
+
+<p class="text-gray-500 mt-4 md:mt-0">
+
+Designed & Developed by <span class="text-[#C27C48]">Khuzama</span>
+
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
 {% endblock %}

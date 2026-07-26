@@ -1,0 +1,203 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$J1il3cSMeZ5DtsPt1V1BV3$DtS6aBkZ3WkWBYUmSWxJmCqzjYai7X5ke6+Dui7KitI=",
+    "last_login": "2026-07-25T13:21:51.164Z",
+    "is_superuser": true,
+    "username": "management",
+    "first_name": "",
+    "last_name": "",
+    "email": "khuzama003@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-01-24T20:07:49.032Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$oyGwy1eJFT0z6B10zyUzv5$HtRpXWHaeObe6l4CLj04pJc8/AdcyViLAlin1c5ziGI=",
+    "last_login": "2026-02-02T21:52:32.455Z",
+    "is_superuser": false,
+    "username": "Khuzamaarshad",
+    "first_name": "",
+    "last_name": "",
+    "email": "khuzama003@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-02-02T20:20:32.986Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$gVUBpJNYLiye1Mj2Ld6lOA$XJ01qnrSsMPflUAzdySq3J+JwC+vcwua3I9TGsvghAI=",
+    "last_login": "2026-02-02T20:42:12.307Z",
+    "is_superuser": false,
+    "username": "khuzamaarshad11",
+    "first_name": "",
+    "last_name": "",
+    "email": "khuzama003@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-02-02T20:41:45.978Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$3l3QTE5eAVFDyR25qhFo9R$/QeLnOsDWBGgq1bo9XJKMVu92wSBncXtOBlAjvERz6c=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "khuzama11111",
+    "first_name": "",
+    "last_name": "",
+    "email": "khuzam@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-02-02T22:06:13.073Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$bWUDZ46ntcFmCn0rZ9aeZ4$FhfDw9sBt91/gMghF6+VGmt1I7kaBUiUN+teYHYQqTI=",
+    "last_login": "2026-02-03T12:54:30.295Z",
+    "is_superuser": false,
+    "username": "testuser",
+    "first_name": "",
+    "last_name": "",
+    "email": "khuzama003@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-02-03T12:53:25.893Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$vRh9ove1z13Wh6aCfynTRs$sYKQfj+Hqi/K2nrS3BKBUtf0YRSTm1V/U6kctGAyPbI=",
+    "last_login": "2026-07-02T02:55:03.407Z",
+    "is_superuser": false,
+    "username": "alpha",
+    "first_name": "",
+    "last_name": "",
+    "email": "khuzama003@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-02T02:54:42.425Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "product.product",
+  "pk": 2,
+  "fields": {
+    "name": "HOT COFFEE",
+    "image": "product/Americano.jpg",
+    "description": "Hot coffee Description",
+    "type": "Hot Coffee",
+    "price": "10.00"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 4,
+  "fields": {
+    "name": "Black Coffee",
+    "image": "product/BenefitsOfCoffee_600x450.jpg",
+    "description": "A bold and strong coffee made simply by diluting a rich espresso shot with hot water. It contains no milk or sugar.",
+    "type": "Hot Coffee",
+    "price": "20.00"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 5,
+  "fields": {
+    "name": "Mocha",
+    "image": "product/cappuccino-featured.jpg",
+    "description": "A beautiful heart-and-vine design made with chocolate syrup. This drink combines espresso with hot milk and chocolate sauce, making it perfect for those with a sweet tooth.",
+    "type": "Hot Coffee",
+    "price": "30.00"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 6,
+  "fields": {
+    "name": "Café Latte",
+    "image": "product/images_2.jpg",
+    "description": "A mild and creamy drink with a high ratio of steamed milk to espresso. Baristas often top it with elegant \"leaf\" (rosetta) or \"heart\" milk foam art.",
+    "type": "Hot Coffee",
+    "price": "25.00"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 7,
+  "fields": {
+    "name": "Cappuccino",
+    "image": "product/Corkframes_Coffee_Guide_520x500_422ebe38-4cfa-42b5-a266-b9bfecabaf30.webp",
+    "description": "A classic Italian favorite made with equal parts espresso, steamed milk, and a thick, airy layer of milk foam. It is dusted lightly with ground cinnamon or cocoa powder.",
+    "type": "Hot Coffee",
+    "price": "30.00"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 8,
+  "fields": {
+    "name": "Espresso Shot",
+    "image": "product/cup-of-coffee.avif",
+    "description": "A concentrated, pure shot of coffee forced through finely-ground beans under high pressure. It is topped with a signature golden-brown froth called \"crema\" and contains no milk.",
+    "type": "Hot Coffee",
+    "price": "25.00"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 9,
+  "fields": {
+    "name": "Frothy Milk Coffee",
+    "image": "product/filter-coffee-recipe8.webp",
+    "description": "A traditional coffee brewed using a metal filter and aggressively poured between a steel glass and a saucer to create a massive, frothy top. It is typically very milky and pre-sweetened.",
+    "type": "Hot Coffee",
+    "price": "20.00"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 10,
+  "fields": {
+    "name": "Freshly Brewed Drip Coffee",
+    "image": "product/images_1.jpg",
+    "description": "Standard brewed coffee made by letting hot water pass through coffee grounds in a filter. It is served piping hot, straight from the pot or coffee maker.",
+    "type": "Hot Coffee",
+    "price": "20.00"
+  }
+},
+{
+  "model": "product.product",
+  "pk": 11,
+  "fields": {
+    "name": "Flat White",
+    "image": "product/images.jpg",
+    "description": "Similar to a latte but with a stronger punch of espresso and a much thinner, velvety layer of \"micro-foam\" instead of stiff froth.",
+    "type": "Hot Coffee",
+    "price": "25.00"
+  }
+}
+]

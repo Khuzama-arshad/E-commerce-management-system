@@ -1,106 +1,370 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block hero-page %}
+<section
+    class="relative h-[320px] flex items-center justify-center bg-cover bg-center"
+    style="background-image:url('{% static 'image/banner-img.webp' %}')">
+
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
+
+    <div class="relative z-10 text-center">
+        <h1 class="text-5xl font-black text-white tracking-wide">
+           Contact Us
+        </h1>
+
+        <div class="mt-4 text-orange-300 font-semibold">
+            <a href="/home/" class="hover:text-white duration-300">
+                HOME
+            </a>
+
+            /
+
+            <span class="text-white">
+                Contact Us
+            </span>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
+
 {% block contactform %}
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="flex  items-center justify-between">
+<section class="relative min-h-screen bg-gradient-to-br from-black via-[#111111] to-black overflow-hidden py-20">
 
-      <!-- Left: Logo -->
-      <div class="flex items-center pt-7 pb-5 gap-2">
-        <img 
-          src="{% static 'image/koffee-logo.webp' %}" 
-          alt="Logo"
-          class="h-12 w-auto"
-        >
-      </div>
+    <!-- Background Glow -->
 
-      <!-- Right: Menu -->
-      <ul class="hidden md:flex items-center gap-8 text-lg font-semibold">
-        <li>
-          <a href="#" class="hover:text-[#883b04] transition">
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="/about/" class="hover:text-[#883b04] transition">
-            About
-          </a>
-        </li>
-        <li>
-          <a href="/menu/" class="hover:text-[#883b04] transition">
-            Menu
-          </a>
-        </li>
-        <li>
-          <a href="/contact/" class="hover:text-[#883b04] transition">
-            Contact
-          </a>
-        </li>
-      </ul>
+    <div class="absolute -left-40 top-20 w-[450px] h-[450px] bg-[#883b04] blur-[180px] opacity-20 rounded-full"></div>
+
+    <div class="absolute right-0 bottom-0 w-[500px] h-[500px] bg-orange-500 blur-[200px] opacity-10 rounded-full"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Heading -->
+
+        <div class="text-center mb-16">
+
+            <span class="uppercase tracking-[6px] text-[#C27C48]">
+
+                Contact Us
+
+            </span>
+
+            <h1 class="text-5xl md:text-6xl font-black text-white mt-4">
+
+                We'd Love To Hear From You
+
+            </h1>
+
+            <p class="text-gray-400 mt-6 max-w-2xl mx-auto">
+
+                Whether you have a question, feedback, or just want to say hello,
+                we're always here to help.
+
+            </p>
+
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <!-- Left -->
+
+            <div>
+
+                <div class="space-y-8">
+
+                    <div class="flex items-center gap-5">
+
+                        <div class="w-16 h-16 rounded-full bg-[#883b04] flex items-center justify-center">
+
+                            <i class="fa-solid fa-location-dot text-white text-xl"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3 class="text-white text-xl font-bold">
+
+                                Address
+
+                            </h3>
+
+                            <p class="text-gray-400">
+
+                                Lahore, Pakistan
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-5">
+
+                        <div class="w-16 h-16 rounded-full bg-[#883b04] flex items-center justify-center">
+
+                            <i class="fa-solid fa-phone text-white"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3 class="text-white text-xl font-bold">
+
+                                Phone
+
+                            </h3>
+
+                            <p class="text-gray-400">
+
+                                +92 300 1234567
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-5">
+
+                        <div class="w-16 h-16 rounded-full bg-[#883b04] flex items-center justify-center">
+
+                            <i class="fa-solid fa-envelope text-white"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3 class="text-white text-xl font-bold">
+
+                                Email
+
+                            </h3>
+
+                            <p class="text-gray-400">
+
+                                info@koffee.com
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Contact Form -->
+
+            <div
+            class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 shadow-2xl">
+
+                <form method="POST" class="max-w-md mx-auto bg-[#161616] border border-white/10 rounded-2xl p-8 shadow-2xl space-y-5">
+    {% csrf_token %}
+
+    <div>
+        <label class="block text-sm font-medium text-gray-300 mb-1.5">Username</label>
+        <input type="text" name="username" placeholder="Enter username"
+            class="w-full bg-[#1b1b1b] border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500
+                   focus:outline-none focus:ring-2 focus:ring-[#a24a09] focus:border-transparent
+                   transition-all duration-200">
+    </div>
+
+    <div>
+        <label class="block text-sm font-medium text-gray-300 mb-1.5">Password</label>
+        <input type="password" name="password" placeholder="Enter password"
+            class="w-full bg-[#1b1b1b] border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500
+                   focus:outline-none focus:ring-2 focus:ring-[#a24a09] focus:border-transparent
+                   transition-all duration-200">
+    </div>
+
+    <div>
+        <label class="block text-sm font-medium text-gray-300 mb-1.5">Email</label>
+        <input type="email" name="email" placeholder="Enter email"
+            class="w-full bg-[#1b1b1b] border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500
+                   focus:outline-none focus:ring-2 focus:ring-[#a24a09] focus:border-transparent
+                   transition-all duration-200">
+    </div>
+
+    <div>
+        <label class="block text-sm font-medium text-gray-300 mb-1.5">Message</label>
+        <textarea name="message" rows="4" placeholder="Write your message"
+            class="w-full bg-[#1b1b1b] border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500
+                   focus:outline-none focus:ring-2 focus:ring-[#a24a09] focus:border-transparent
+                   transition-all duration-200 resize-none"></textarea>
+    </div>
+
+    <button type="submit"
+        class="w-full py-3.5 rounded-full bg-gradient-to-r from-[#883b04] to-[#a24a09] text-white font-bold
+               hover:shadow-lg hover:shadow-[#883b04]/30 hover:scale-[1.02] active:scale-[0.98]
+               transition-all duration-300">
+        Send Message
+    </button>
+</form>
+
+            </div>
+
+        </div>
 
     </div>
-  </div>
-    </nav>
-<h1 class="text-white font-regular-lg text-4xl uppercase text-center pt-9">Contact Us</h1>
-<form method="POST" class="contact-form">
-  {% csrf_token %}
 
-  <div class="form-group">
-    <label>Username</label>
-    {{ form.username }}
-  </div>
-
-  <div class="form-group">
-    <label>Password</label>
-    {{ form.password }}
-  </div>
-
-  <div class="form-group">
-    <label>Email</label>
-    {{ form.email }}
-  </div>
-
-  <div class="form-group">
-    <label>Message</label>
-    {{ form.message }}
-  </div>
-
-  <button type="submit" class="btn-submit">Submit</button>
-</form>
+</section>
 
 {% endblock  %}
-{% comment %} Footer {% endcomment %}
 {% block footer %}
- <section 
-    class="relative h-[80vh] flex items-center justify-center bg-cover bg-center"
-    style="background-image: url('{% static "image\footer-bg.webp" %}');"
-    > 
-    <!-- Content -->
-    <div class="relative z-10 text-center max-w-3xl px-6 translate-y-6
-                animate-fadeUp">
-    <div class="flex justify-center pt-7 pb-5 gap-2">
-        <img 
-          src="{% static 'image/koffee-logo.webp' %}" 
-          alt="Logo"
-          class="h-15 w-auto"
-        >
-      </div>
-        <h3 class="font-regular mt-4 text-gray-300 text-base md:text-lg">
-       Discover an elevated coffee experience where craftsmanship meets comfort. From carefully curated cafés to signature blends, we bring you refined flavors and timeless moments — all in one place.
-        </h3>
+<!-- ================================= -->
+<!-- Footer -->
+<!-- ================================= -->
 
-        <!--  email Button -->
-<form method="POST" class="contact-form">
-  {% csrf_token %}
-  <div class="form-group">
-    <label>Email</label>
-    {{ form.email }}
-  </div>
-  <button type="submit" class="btn-submit">Submit</button>
-</form>
-       
+<footer class="bg-black border-t border-white/10">
 
-    </div>
-</section>
-<p class="text-[#883b04] flex justify-center font-bold">© 2025 Khuzama | All Rights Reserved</p>
+<div class="max-w-7xl mx-auto px-6 py-20">
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+<!-- Logo -->
+
+<div>
+
+<img
+src="{% static 'image/koffee-logo.webp' %}"
+class="h-16 mb-6">
+
+<p class="text-gray-400 leading-8">
+
+Crafting premium coffee experiences through
+carefully selected beans, expert brewing,
+and exceptional hospitality.
+
+</p>
+
+</div>
+
+<!-- Links -->
+
+<div>
+
+<h3 class="text-white font-bold text-xl mb-6">
+
+Quick Links
+
+</h3>
+
+<ul class="space-y-4 text-gray-400">
+
+<li><a href="/home/" class="hover:text-[#C27C48]">Home</a></li>
+
+<li><a href="/about/" class="hover:text-[#C27C48]">About</a></li>
+
+<li><a href="/product/" class="hover:text-[#C27C48]">Menu</a></li>
+
+<li><a href="/contact/" class="hover:text-[#C27C48]">Contact</a></li>
+
+</ul>
+
+</div>
+
+<!-- Hours -->
+
+<div>
+
+<h3 class="text-white font-bold text-xl mb-6">
+
+Opening Hours
+
+</h3>
+
+<div class="space-y-4 text-gray-400">
+
+<p>Monday - Friday</p>
+
+<p>8:00 AM – 10:00 PM</p>
+
+<p>Saturday - Sunday</p>
+
+<p>9:00 AM – 11:00 PM</p>
+
+</div>
+
+</div>
+
+<!-- Contact -->
+
+<div>
+
+<h3 class="text-white font-bold text-xl mb-6">
+
+Contact
+
+</h3>
+
+<div class="space-y-4 text-gray-400">
+
+<p>📍 Main Coffee Street</p>
+
+<p>📞 +92 300 1234567</p>
+
+<p>✉ info@koffee.com</p>
+
+</div>
+
+<div class="flex gap-4 mt-8">
+
+<a href="#"
+class="w-11 h-11 rounded-full bg-[#161616] flex items-center justify-center hover:bg-[#883b04] duration-300">
+
+<i class="fab fa-facebook-f text-white"></i>
+
+</a>
+
+<a href="#"
+class="w-11 h-11 rounded-full bg-[#161616] flex items-center justify-center hover:bg-[#883b04] duration-300">
+
+<i class="fab fa-instagram text-white"></i>
+
+</a>
+
+<a href="#"
+class="w-11 h-11 rounded-full bg-[#161616] flex items-center justify-center hover:bg-[#883b04] duration-300">
+
+<i class="fab fa-twitter text-white"></i>
+
+</a>
+
+<a href="#"
+class="w-11 h-11 rounded-full bg-[#161616] flex items-center justify-center hover:bg-[#883b04] duration-300">
+
+<i class="fab fa-youtube text-white"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="border-white/10 my-12">
+
+<div class="flex flex-col md:flex-row justify-between items-center">
+
+<p class="text-gray-500">
+
+© 2026 Koffee. All Rights Reserved.
+
+</p>
+
+<p class="text-gray-500 mt-4 md:mt-0">
+
+Designed & Developed by <span class="text-[#C27C48]">Khuzama</span>
+
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
 {% endblock %}
