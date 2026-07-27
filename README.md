@@ -1,1 +1,1 @@
-# restaurant-management-system
+# E-commerce-management-system
