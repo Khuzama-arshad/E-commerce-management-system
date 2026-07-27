@@ -6,6 +6,7 @@ class Signup(models.Model):
     password = models.CharField(max_length=60)
     first_name = models.CharField(max_length=60)
     last_name = models.CharField(max_length=100, blank=True, null=True)
+    phone = models.CharField(max_length=20, blank=True, null=True)
     email = models.EmailField(unique=True)
     message = models.TextField(default="")
 def __str__(self):
