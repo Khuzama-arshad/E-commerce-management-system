@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block order_confirmation %}
+
+<section class="min-h-screen bg-gray-50 py-12 px-4">
+  <div class="max-w-2xl mx-auto">
+
+    <!-- Success Banner -->
+    <div class="bg-green-50 border border-green-200 rounded-2xl p-6 mb-8 text-center">
+      <div class="text-5xl mb-3">✅</div>
+      <h2 class="text-2xl font-bold text-green-700">Order Confirmed!</h2>
+      <p class="text-green-600 mt-1 text-sm">Your order has been placed successfully.</p>
+    </div>
+
+    <!-- Order Meta -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-xs text-gray-400 uppercase tracking-wide">Order Number</p>
+          <p class="text-xl font-bold text-gray-800">#{{ order.id }}</p>
+        </div>
+        <span class="px-4 py-1.5 bg-green-100 text-green-700 text-sm font-semibold rounded-full">
+          Confirmed
+        </span>
+      </div>
+      <p class="mt-3 text-gray-600 text-sm">
+        Thank you, <span class="font-semibold text-gray-800">{{ order.full_name }}</span>! 
+        We've received your order and will process it shortly.
+      </p>
+    </div>
+
+    <!-- Customer Details -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+      <h3 class="text-base font-semibold text-gray-700 mb-4">Delivery Details</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+        <div class="bg-gray-50 rounded-xl p-4">
+          <p class="text-xs text-gray-400 uppercase mb-1">Email</p>
+          <p class="text-gray-700 font-medium">{{ order.email }}</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-4">
+          <p class="text-xs text-gray-400 uppercase mb-1">Phone</p>
+          <p class="text-gray-700 font-medium">{{ order.phone }}</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-4 sm:col-span-2">
+          <p class="text-xs text-gray-400 uppercase mb-1">Delivery Address</p>
+          <p class="text-gray-700 font-medium">{{ order.address }}, {{ order.city }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Items Ordered -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+      <h3 class="text-base font-semibold text-gray-700 mb-4">Items Ordered</h3>
+      <div class="divide-y divide-gray-100">
+        {% for item in order.items.all %}
+        <div class="flex items-center justify-between py-3">
+          <div>
+            <p class="text-sm font-medium text-gray-800">{{ item.product.name }}</p>
+            <p class="text-xs text-gray-400">${{ item.quantity }}</p>
+          </div>
+          <p class="text-sm font-semibold text-gray-700">${{ item.get_total }}</p>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Total -->
+      <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-200">
+        <p class="text-sm font-semibold text-gray-600">Total Paid</p>
+        <p class="text-xl font-bold text-gray-900">${{ order.total_price }}</p>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a href="{% url 'order_detail' order.id %}"
+         class="flex-1 text-center px-6 py-3 bg-gray-800 text-white text-sm font-semibold rounded-xl hover:bg-gray-700 transition">
+        View Order Details
+      </a>
+      <a href="{% url 'checkout' %}"
+         class="flex-1 text-center px-6 py-3 border border-gray-300 text-gray-700 text-sm font-semibold rounded-xl hover:bg-gray-50 transition">
+        ← Continue Shopping
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

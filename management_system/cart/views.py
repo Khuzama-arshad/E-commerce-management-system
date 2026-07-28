@@ -1,10 +1,12 @@
 from django.shortcuts import get_object_or_404, redirect , render
 from product.models import Product
+
 # Create your views here.
 # def Cart(request):
 #     cart_items = request.session.get("cart", {})
 #     subtotal = sum(item["price"] * item["quantity"] for item in cart_items.values())
 #     return render(request, 'cart.html', {'cart_items': cart_items, 'subtotal': subtotal})
+
 def Cart(request):
     cart_items = request.session.get("cart", {})
 
