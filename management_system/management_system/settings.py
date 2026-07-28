@@ -42,8 +42,11 @@ INSTALLED_APPS = [
     'pages',
     'product',
     'contact',
+    'order',
+    'cart',
     'account',
     'tailwind',
+    "widget_tweaks",
     'theme',
     'django_browser_reload',
 ]
